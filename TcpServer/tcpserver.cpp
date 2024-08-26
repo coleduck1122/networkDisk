@@ -37,8 +37,7 @@ void TcpServer::loadConfig()
         m_strIP = strList.at(0);
         m_usPort = strList.at(1).toUShort();
 
-        qDebug() << "ip: " << m_strIP;
-        qDebug() << "port: " << m_usPort;
+        qDebug() << "ip: " << m_strIP << "port: " << m_usPort;
     }
     else
     {

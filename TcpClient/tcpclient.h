@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QTcpSocket>
+#include "opewidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class TcpClient; }
@@ -15,6 +16,9 @@ class TcpClient : public QWidget
 public:
     TcpClient(QWidget *parent = nullptr);
     ~TcpClient();
+    static TcpClient &getInstance();
+    QTcpSocket &getTcpSocket();
+    QString loginName();
     void loadConfig();
 
 public slots:
@@ -37,5 +41,6 @@ private:
 
     // 连接服务器，和服务器数据进行交互
     QTcpSocket m_tcpSocket;
+    QString m_strLoginName;
 };
 #endif // TCPCLIENT_H

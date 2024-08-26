@@ -8,16 +8,28 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QInputDialog>
 
 #include "online.h"
+#include "protocol.h"
 
 class Friend : public QWidget
 {
     Q_OBJECT
 public:
     explicit Friend(QWidget *parent = nullptr);
+    void showAllOnlineUsr(PDU *pdu);
+    void updateFriendList(PDU *pdu);
+
+    QString m_strSearchName;
 
 signals:
+
+public slots:
+    void showOnline();
+    void searchUsr();
+    void flushFriend();
+    void deleteFriend();
 
 private:
     QTextEdit *m_pShowMsgTE;
